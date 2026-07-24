@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BRASA — Revista do Instituto Brasa Zona Norte · Nº 01</title>
-<meta name="description" content="BRASA, a revista digital do Instituto Brasa Zona Norte: artigos de interesse geral e as realizações do Instituto.">
+<title>Revista Digital do Instituto BZN · 6ª edição</title>
+<meta name="description" content="Revista Digital do Instituto BZN: artigos de interesse geral e as realizações do Instituto.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,19 @@
 
 <style>
   :root{
-    --navy:#04263F;       /* azul naval — âncora */
-    --navy2:#0A3A5C;
-    --blue:#2F6BE0;       /* azul da marca */
-    --coral:#FF6A45;      /* calor / energia */
-    --coral-deep:#EA5230;
-    --amber:#FFB020;      /* dourado quente */
-    --gold:#F79A1F;
-    --cream:#FFF7EC;      /* fundo quente */
-    --sand:#FDE9CF;
-    --ink:#221D19;
-    --muted:#7A6E62;
-    --line:rgba(4,38,63,.14);
+    --navy:#06283F;       /* azul naval — âncora */
+    --navy2:#123E63;
+    --blue:#2F6BE0;       /* azul da marca — protagonista */
+    --blue-deep:#1B4C9B;
+    --teal:#0E9B94;       /* verde-azulado — frescor */
+    --teal-deep:#0B7D77;
+    --sun:#F7BE3F;        /* dourado suave — toque quente pontual */
+    --sun-soft:#FFE39B;
+    --cream:#FBF8F1;      /* fundo claro e acolhedor */
+    --sand:#F3ECDD;       /* faixa quente suave */
+    --ink:#1E2733;
+    --muted:#6A7480;
+    --line:rgba(6,40,63,.13);
     --white:#fff;
 
     --serif:'Fraunces', Georgia, 'Times New Roman', serif;
@@ -41,7 +42,7 @@
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   }
   img,svg{display:block;max-width:100%}
-  a{color:var(--coral-deep);text-decoration:none}
+  a{color:var(--blue-deep);text-decoration:none}
   a:hover{text-decoration:underline}
 
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
@@ -53,69 +54,70 @@
 
   /* etiqueta em pílula colorida */
   .tag{display:inline-block;font-family:var(--sans);font-weight:800;font-size:.72rem;
-    letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--coral);
+    letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--blue);
     padding:.42em .8em;border-radius:6px;line-height:1}
-  .t-coral{background:var(--coral)} .t-amber{background:var(--gold)}
-  .t-blue{background:var(--blue)} .t-navy{background:var(--navy)}
+  .t-blue{background:var(--blue)} .t-teal{background:var(--teal-deep)}
+  .t-sun{background:var(--sun);color:var(--navy)} .t-navy{background:var(--navy)}
 
-  /* ================= MASTHEAD (barra fixa) ================= */
+  /* ================= BARRA FIXA ================= */
   .topbar{position:sticky;top:0;z-index:60;background:var(--navy);color:#fff}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-  .topbar .logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--serif);font-weight:900;font-size:1.35rem;letter-spacing:.02em}
+  .topbar .logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--serif);font-weight:900;font-size:1.15rem;letter-spacing:.01em}
   .topbar .logo svg{width:22px;height:auto}
+  .topbar .logo span{font-weight:500;opacity:.8;font-family:var(--sans);font-size:.82rem}
   .topbar nav{display:flex;gap:24px}
   .topbar nav a{color:rgba(255,255,255,.82);font-weight:600;font-size:.9rem}
-  .topbar nav a:hover{color:var(--amber);text-decoration:none}
-  @media(max-width:760px){.topbar nav{display:none}}
+  .topbar nav a:hover{color:var(--sun);text-decoration:none}
+  @media(max-width:820px){.topbar nav{display:none}}
 
   /* ================= CAPA (full-bleed) ================= */
   .cover{position:relative;min-height:calc(100svh - 56px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;color:#fff}
   .cover .cover-illus{position:absolute;inset:0;width:100%;height:100%;z-index:0}
   .cover .scrim{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(to bottom, rgba(4,38,63,.28) 0%, rgba(4,38,63,0) 26%, rgba(4,38,63,0) 45%, rgba(4,38,63,.72) 100%)}
+    background:linear-gradient(to bottom, rgba(6,40,63,.34) 0%, rgba(6,40,63,0) 24%, rgba(6,40,63,0) 44%, rgba(6,40,63,.74) 100%)}
   .cover-top,.cover-bottom{position:relative;z-index:2}
-  .cover-top{padding:38px 0 0}
-  .masthead-title{font-family:var(--serif);font-weight:900;font-size:clamp(3.2rem,13vw,8.5rem);line-height:.86;letter-spacing:-.02em;color:#fff;text-shadow:0 4px 30px rgba(4,38,63,.35)}
-  .masthead-sub{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:14px;font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.9)}
-  .masthead-sub .pill{background:var(--amber);color:var(--navy);padding:.35em .7em;border-radius:999px;letter-spacing:.1em}
+  .cover-top{padding:40px 0 0}
+  .masthead-title{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,8vw,5.6rem);line-height:.92;letter-spacing:-.02em;color:#fff;text-shadow:0 4px 30px rgba(6,40,63,.4)}
+  .masthead-name{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(1.2rem,3vw,1.9rem);color:var(--sun-soft);margin-top:4px}
+  .masthead-sub{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:18px;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+  .masthead-sub .pill{background:var(--sun);color:var(--navy);padding:.4em .8em;border-radius:999px;letter-spacing:.08em}
   .cover-bottom{padding:0 0 46px}
-  .cover-lead{max-width:16ch}
   .cover-lead .ktag{margin-bottom:18px}
-  .cover-lead h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.8rem,9vw,6.2rem);line-height:.94;color:#fff;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(4,38,63,.4)}
-  .cover-lead p{max-width:34ch;font-size:1.12rem;color:rgba(255,255,255,.92);margin:18px 0 0;text-shadow:0 2px 16px rgba(4,38,63,.5)}
-  .cover-lines{margin-top:30px;display:flex;flex-direction:column;gap:10px;max-width:520px}
-  .cover-lines a{display:flex;align-items:center;gap:12px;color:#fff;font-weight:600;font-size:1.02rem;padding:8px 0;border-top:1px solid rgba(255,255,255,.25)}
-  .cover-lines a:hover{color:var(--amber);text-decoration:none}
-  .cover-lines .n{font-family:var(--serif);font-weight:900;color:var(--amber);font-size:1.1rem;min-width:1.4em}
-  .scroll-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+  .cover-lead h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.7rem,8.5vw,5.8rem);line-height:.96;color:#fff;letter-spacing:-.02em;max-width:15ch;text-shadow:0 4px 30px rgba(6,40,63,.45)}
+  .cover-lead p{max-width:34ch;font-size:1.12rem;color:rgba(255,255,255,.94);margin:18px 0 0;text-shadow:0 2px 16px rgba(6,40,63,.55)}
+  .cover-lines{margin-top:30px;display:flex;flex-direction:column;gap:0;max-width:540px}
+  .cover-lines a{display:flex;align-items:center;gap:14px;color:#fff;font-weight:600;font-size:1.02rem;padding:11px 0;border-top:1px solid rgba(255,255,255,.28)}
+  .cover-lines a:hover{color:var(--sun);text-decoration:none}
+  .cover-lines .n{font-family:var(--serif);font-weight:900;color:var(--sun);font-size:1.1rem;min-width:1.4em}
+  .scroll-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.72);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 
   /* ================= CARTA DO EDITOR ================= */
   .letter{background:var(--sand);padding:70px 0;position:relative;overflow:hidden}
-  .letter .quote-mark{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-weight:900;font-size:16rem;color:var(--coral);opacity:.16;line-height:1;pointer-events:none}
+  .letter .quote-mark{position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-weight:900;font-size:16rem;color:var(--teal);opacity:.14;line-height:1;pointer-events:none}
   .letter .measure{position:relative}
   .letter .tag{margin-bottom:22px}
   .letter p{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.42;color:var(--navy);margin:0 0 1rem;font-weight:500}
   .letter .sign{font-family:var(--sans);font-size:.95rem;color:var(--muted);margin-top:1.5rem;font-weight:500}
-  .letter .sign b{color:var(--coral-deep);display:block;font-size:1.05rem;font-weight:800}
+  .letter .sign b{color:var(--teal-deep);display:block;font-size:1.05rem;font-weight:800}
 
   /* ================= SUMÁRIO ================= */
   .toc{padding:80px 0 30px}
   .toc-head{display:flex;align-items:center;gap:18px;margin-bottom:40px}
   .toc-head h2{font-size:clamp(1.9rem,4vw,2.8rem)}
   .toc-head .rule{flex:1;height:4px;background:var(--navy);border-radius:2px}
-  .toc-head .count{font-weight:800;color:var(--coral-deep);letter-spacing:.1em;text-transform:uppercase;font-size:.82rem}
+  .toc-head .count{font-weight:800;color:var(--blue-deep);letter-spacing:.1em;text-transform:uppercase;font-size:.82rem}
   .toc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .toc-card{display:block;padding:0;border-radius:14px;overflow:hidden;background:var(--white);
     box-shadow:0 1px 0 var(--line);border:1px solid var(--line);transition:transform .18s ease,box-shadow .18s ease;color:inherit}
-  .toc-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(4,38,63,.45);text-decoration:none}
+  .toc-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(6,40,63,.42);text-decoration:none}
   .toc-card .bar{height:8px}
   .toc-card .in{padding:20px 20px 24px}
   .toc-card .num{font-family:var(--serif);font-weight:900;font-size:2.6rem;line-height:1}
   .toc-card .lbl{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
   .toc-card h3{color:var(--navy);font-size:1.14rem}
-  .c-coral .bar{background:var(--coral)} .c-coral .num{color:var(--coral)}
-  .c-amber .bar{background:var(--gold)} .c-amber .num{color:var(--gold)}
   .c-blue .bar{background:var(--blue)} .c-blue .num{color:var(--blue)}
+  .c-teal .bar{background:var(--teal)} .c-teal .num{color:var(--teal-deep)}
+  .c-sun .bar{background:var(--sun)} .c-sun .num{color:var(--sun)}
   .c-navy .bar{background:var(--navy)} .c-navy .num{color:var(--navy)}
   @media(max-width:880px){.toc-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:460px){.toc-grid{grid-template-columns:1fr}}
@@ -125,67 +127,67 @@
   .article + .article{border-top:1px solid var(--line)}
   .folio{position:absolute;top:10px;right:-6px;z-index:0;font-family:var(--serif);font-weight:900;
     font-size:clamp(7rem,22vw,19rem);line-height:.72;pointer-events:none;opacity:.09}
-  .a-coral .folio{color:var(--coral)} .a-amber .folio{color:var(--gold)}
-  .a-blue .folio{color:var(--blue)} .a-navy .folio{color:var(--navy)}
+  .a-blue .folio{color:var(--blue)} .a-teal .folio{color:var(--teal)}
+  .a-sun .folio{color:var(--sun);opacity:.16} .a-navy .folio{color:var(--navy)}
   .article .wrap{position:relative;z-index:1}
   .article-head{max-width:780px;margin:0 auto 38px}
   .article-head .tag{margin-bottom:20px}
   .article-head h2{margin:0 0 20px}
-  .article-head .dek{font-size:1.22rem;color:#463d34;margin:0 0 22px;font-weight:500}
+  .article-head .dek{font-size:1.22rem;color:#3c454f;margin:0 0 22px;font-weight:500}
   .article-meta{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--muted);font-weight:500}
   .article-meta .avatar{width:40px;height:40px;border-radius:50%;flex:none}
-  .a-coral .avatar{background:linear-gradient(135deg,var(--coral),var(--gold))}
-  .a-amber .avatar{background:linear-gradient(135deg,var(--gold),var(--coral))}
   .a-blue .avatar{background:linear-gradient(135deg,var(--blue),var(--navy))}
-  .a-navy .avatar{background:linear-gradient(135deg,var(--navy),var(--blue))}
+  .a-teal .avatar{background:linear-gradient(135deg,var(--teal),var(--blue))}
+  .a-sun .avatar{background:linear-gradient(135deg,var(--sun),var(--teal))}
+  .a-navy .avatar{background:linear-gradient(135deg,var(--navy),var(--teal-deep))}
   .article-meta b{color:var(--navy)}
 
   figure.photo{margin:0 auto 42px;max-width:940px}
-  .photo .frame{aspect-ratio:16/9;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 24px 48px -30px rgba(4,38,63,.5)}
+  .photo .frame{aspect-ratio:16/9;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 24px 48px -30px rgba(6,40,63,.5)}
   .photo .frame .illus{position:absolute;inset:0;width:100%;height:100%}
   figure.photo figcaption{font-size:.82rem;color:var(--muted);margin-top:12px;padding-left:2px}
 
   .body{max-width:var(--measure);margin:0 auto;font-size:1.09rem}
   .body p{margin:0 0 1.4rem}
   .body p.lead::first-letter{font-family:var(--serif);float:left;font-size:4.4rem;line-height:.74;padding:.06em .12em 0 0;font-weight:900}
-  .a-coral .lead::first-letter{color:var(--coral)} .a-amber .lead::first-letter{color:var(--gold)}
-  .a-blue .lead::first-letter{color:var(--blue)} .a-navy .lead::first-letter{color:var(--navy)}
+  .a-blue .lead::first-letter{color:var(--blue)} .a-teal .lead::first-letter{color:var(--teal-deep)}
+  .a-sun .lead::first-letter{color:var(--sun)} .a-navy .lead::first-letter{color:var(--navy)}
   .pullquote{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);
-    line-height:1.28;color:var(--navy);margin:2.4rem 0;padding-left:1.5rem;border-left:5px solid var(--coral)}
-  .a-amber .pullquote{border-color:var(--gold)} .a-blue .pullquote{border-color:var(--blue)} .a-navy .pullquote{border-color:var(--coral)}
+    line-height:1.28;color:var(--navy);margin:2.4rem 0;padding-left:1.5rem;border-left:5px solid var(--blue)}
+  .a-teal .pullquote{border-color:var(--teal)} .a-sun .pullquote{border-color:var(--sun)} .a-navy .pullquote{border-color:var(--teal)}
 
   /* faixa de números */
   .stats{background:var(--navy);color:#fff;border-radius:18px;padding:44px 34px;margin:6px auto 42px;max-width:940px;position:relative;overflow:hidden}
-  .stats::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--coral),transparent 68%);opacity:.5}
+  .stats::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--teal),transparent 68%);opacity:.55}
   .stats .tag{margin-bottom:26px;position:relative}
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
-  .stat .n{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,5vw,3.2rem);line-height:1;color:var(--amber)}
-  .stat .n small{font-size:.55em;color:var(--coral)}
+  .stat .n{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,5vw,3.2rem);line-height:1;color:var(--sun)}
+  .stat .n small{font-size:.55em;color:var(--teal)}
   .stat .t{font-size:.88rem;color:rgba(255,255,255,.82);margin-top:10px;font-weight:500}
   @media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:26px}}
 
   /* ================= COMO AJUDAR ================= */
   .cta{position:relative;overflow:hidden;padding:90px 0;margin-top:20px;text-align:center;
-    background:linear-gradient(135deg,var(--gold) 0%,var(--coral) 55%,var(--coral-deep) 100%);color:#fff}
+    background:linear-gradient(135deg,var(--teal) 0%,var(--blue) 60%,var(--blue-deep) 100%);color:#fff}
   .cta .measure{position:relative;z-index:1}
-  .cta .tag{background:var(--navy);margin-bottom:18px}
+  .cta .tag{background:var(--sun);color:var(--navy);margin-bottom:18px}
   .cta h2{color:#fff;margin-bottom:16px;font-size:clamp(2.2rem,5.5vw,3.6rem)}
   .cta p{color:rgba(255,255,255,.95);font-size:1.16rem;margin:0 auto 32px;max-width:44ch}
-  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;padding:16px 34px;border-radius:999px;font-size:1.02rem;margin:6px}
-  .btn:hover{background:#02182a;text-decoration:none}
-  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+  .btn{display:inline-block;background:var(--sun);color:var(--navy);font-weight:800;padding:16px 34px;border-radius:999px;font-size:1.02rem;margin:6px}
+  .btn:hover{background:#ffd15e;text-decoration:none}
+  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);font-weight:700}
   .btn.ghost:hover{background:rgba(255,255,255,.15)}
 
   /* ================= FOOTER ================= */
   footer{background:var(--navy);color:rgba(255,255,255,.72);padding:56px 0 40px}
   .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
-  .foot-brand .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;color:#fff;font-size:1.6rem}
+  .foot-brand .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;color:#fff;font-size:1.35rem}
   .foot-brand .logo svg{width:26px}
-  .foot-brand p{font-size:.9rem;max-width:30ch;margin:14px 0 0}
+  .foot-brand p{font-size:.9rem;max-width:32ch;margin:14px 0 0}
   .foot-links{display:flex;gap:44px;flex-wrap:wrap}
   .foot-col b{color:#fff;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:14px}
   .foot-col a{color:rgba(255,255,255,.72);display:block;font-size:.92rem;margin-bottom:9px}
-  .foot-col a:hover{color:var(--amber)}
+  .foot-col a:hover{color:var(--sun)}
   .foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:.8rem;color:rgba(255,255,255,.5)}
 </style>
 </head>
@@ -195,8 +197,8 @@
 <header class="topbar">
   <div class="wrap">
     <a class="logo" href="#topo">
-      <svg viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27.6C16 27.6 2.2 19.1 2.2 9.4C2.2 4.8 5.9 1.6 9.8 1.6C12.4 1.6 14.7 3 16 5.1C17.3 3 19.6 1.6 22.2 1.6C26.1 1.6 29.8 4.8 29.8 9.4C29.8 19.1 16 27.6 16 27.6Z" fill="#FFB020"/></svg>
-      BRASA
+      <svg viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27.6C16 27.6 2.2 19.1 2.2 9.4C2.2 4.8 5.9 1.6 9.8 1.6C12.4 1.6 14.7 3 16 5.1C17.3 3 19.6 1.6 22.2 1.6C26.1 1.6 29.8 4.8 29.8 9.4C29.8 19.1 16 27.6 16 27.6Z" fill="#2F6BE0"/></svg>
+      Revista&nbsp;BZN <span>· 6ª edição</span>
     </a>
     <nav>
       <a href="#sumario">Nesta edição</a>
@@ -214,44 +216,45 @@
     <svg class="cover-illus" viewBox="0 0 1200 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#FFC24A"/><stop offset="0.42" stop-color="#FF8A4C"/>
-          <stop offset="0.7" stop-color="#FF7A4D"/><stop offset="1" stop-color="#F0603A"/>
+          <stop offset="0" stop-color="#1B4F84"/><stop offset="0.5" stop-color="#1E76A2"/>
+          <stop offset="1" stop-color="#2CA097"/>
         </linearGradient>
         <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stop-color="#FFF3D6"/><stop offset="1" stop-color="#FFF3D6" stop-opacity="0"/>
+          <stop offset="0" stop-color="#FFEFC4"/><stop offset="1" stop-color="#FFEFC4" stop-opacity="0"/>
         </radialGradient>
       </defs>
       <rect width="1200" height="1000" fill="url(#sky)"/>
       <circle cx="820" cy="300" r="250" fill="url(#sunGlow)"/>
-      <circle cx="820" cy="300" r="140" fill="#FFF3D6"/>
+      <circle cx="820" cy="300" r="132" fill="#FFE7A6"/>
       <!-- pássaros -->
       <path d="M300,210 q16,-14 32,0 q16,-14 32,0" stroke="#FFF3D6" stroke-width="4" fill="none" opacity=".8"/>
-      <path d="M380,170 q12,-11 24,0 q12,-11 24,0" stroke="#FFF3D6" stroke-width="3.5" fill="none" opacity=".7"/>
-      <path d="M980,180 q14,-12 28,0 q14,-12 28,0" stroke="#FFF3D6" stroke-width="4" fill="none" opacity=".7"/>
+      <path d="M380,168 q12,-11 24,0 q12,-11 24,0" stroke="#FFF3D6" stroke-width="3.5" fill="none" opacity=".7"/>
+      <path d="M980,178 q14,-12 28,0 q14,-12 28,0" stroke="#FFF3D6" stroke-width="4" fill="none" opacity=".7"/>
       <!-- colinas -->
-      <path d="M0,620 Q300,540 620,600 T1200,560 L1200,1000 L0,1000 Z" fill="#E85536"/>
-      <path d="M0,720 Q350,640 700,712 T1200,690 L1200,1000 L0,1000 Z" fill="#123A5A"/>
+      <path d="M0,620 Q300,540 620,600 T1200,560 L1200,1000 L0,1000 Z" fill="#127E77"/>
+      <path d="M0,720 Q350,640 700,712 T1200,690 L1200,1000 L0,1000 Z" fill="#123E63"/>
       <!-- comunidade -->
       <g>
-        <circle cx="430" cy="690" r="26" fill="#04263F"/>
-        <path d="M370,880 C380,719 405,704 430,704 C455,704 480,719 490,880 Z" fill="#04263F"/>
-        <circle cx="520" cy="672" r="24" fill="#FF6A45"/>
-        <path d="M465,880 C474,698 498,685 520,685 C542,685 566,698 575,880 Z" fill="#FF6A45"/>
-        <circle cx="610" cy="700" r="27" fill="#04263F"/>
-        <path d="M548,880 C558,730 585,715 610,715 C635,715 662,730 672,880 Z" fill="#04263F"/>
-        <circle cx="692" cy="678" r="23" fill="#FFB020"/>
-        <path d="M639,880 C648,703 671,691 692,691 C713,691 736,703 745,880 Z" fill="#FFB020"/>
+        <circle cx="430" cy="690" r="26" fill="#06283F"/>
+        <path d="M370,880 C380,719 405,704 430,704 C455,704 480,719 490,880 Z" fill="#06283F"/>
+        <circle cx="520" cy="672" r="24" fill="#0E9B94"/>
+        <path d="M465,880 C474,698 498,685 520,685 C542,685 566,698 575,880 Z" fill="#0E9B94"/>
+        <circle cx="610" cy="700" r="27" fill="#06283F"/>
+        <path d="M548,880 C558,730 585,715 610,715 C635,715 662,730 672,880 Z" fill="#06283F"/>
+        <circle cx="692" cy="678" r="23" fill="#F7BE3F"/>
+        <path d="M639,880 C648,703 671,691 692,691 C713,691 736,703 745,880 Z" fill="#F7BE3F"/>
       </g>
-      <path d="M0,830 Q400,772 800,830 T1200,832 L1200,1000 L0,1000 Z" fill="#04263F"/>
+      <path d="M0,830 Q400,772 800,830 T1200,832 L1200,1000 L0,1000 Z" fill="#06283F"/>
     </svg>
     <div class="scrim"></div>
 
     <div class="cover-top">
       <div class="wrap">
-        <div class="masthead-title">BRASA</div>
+        <div class="masthead-title">Revista Digital</div>
+        <div class="masthead-name">do Instituto BZN</div>
         <div class="masthead-sub">
-          <span class="pill">Nº 01 · Julho 2026</span>
-          <span>Revista do Instituto Brasa Zona Norte</span>
+          <span class="pill">6ª edição · Julho 2026</span>
+          <span>Artigos e realizações do Instituto</span>
         </div>
       </div>
     </div>
@@ -259,7 +262,7 @@
     <div class="cover-bottom">
       <div class="wrap">
         <div class="cover-lead">
-          <span class="tag t-coral ktag">Reportagem de capa</span>
+          <span class="tag t-sun ktag">Reportagem de capa</span>
           <h1>O direito de recomeçar</h1>
           <p>Quando a educação chega ao território, ela deixa de ser promessa e vira ponto de virada.</p>
         </div>
@@ -277,10 +280,10 @@
   <section class="letter">
     <div class="quote-mark">“</div>
     <div class="wrap measure">
-      <span class="tag t-coral">Carta do editor</span>
-      <p>Toda edição da BRASA nasce de uma pergunta simples: o que aconteceu, de verdade, na vida das pessoas por perto? Não queremos contar o que o Instituto faz — queremos mostrar o que muda quando alguém é visto, escutado e acolhido.</p>
-      <p>Nesta primeira edição, você vai ler sobre educação, saúde mental, os nossos números de 2026 e a história de dona Marlene. Boa leitura, e obrigado por caminhar com a gente.</p>
-      <p class="sign">Com afeto,<b>Nome do Editor(a)</b>Editor(a)-chefe · Revista BRASA</p>
+      <span class="tag t-teal">Carta do editor</span>
+      <p>Toda edição desta revista nasce de uma pergunta simples: o que aconteceu, de verdade, na vida das pessoas por perto? Não queremos contar o que o Instituto faz — queremos mostrar o que muda quando alguém é visto, escutado e acolhido.</p>
+      <p>Nesta 6ª edição, você vai ler sobre educação, saúde mental, os nossos números de 2026 e a história de dona Marlene. Boa leitura, e obrigado por caminhar com a gente.</p>
+      <p class="sign">Com afeto,<b>Nome do Editor(a)</b>Editor(a)-chefe · Revista Digital do Instituto BZN</p>
     </div>
   </section>
 
@@ -293,42 +296,42 @@
         <span class="count">4 artigos</span>
       </div>
       <div class="toc-grid">
-        <a class="toc-card c-coral" href="#artigo-1"><div class="bar"></div><div class="in"><div class="num">01</div><div class="lbl">Em pauta</div><h3>O direito de recomeçar</h3></div></a>
-        <a class="toc-card c-amber" href="#artigo-2"><div class="bar"></div><div class="in"><div class="num">02</div><div class="lbl">Vozes</div><h3>Escutar antes de tudo</h3></div></a>
-        <a class="toc-card c-blue" href="#realizacoes"><div class="bar"></div><div class="in"><div class="num">03</div><div class="lbl">Realizações</div><h3>2026 em números</h3></div></a>
+        <a class="toc-card c-blue" href="#artigo-1"><div class="bar"></div><div class="in"><div class="num">01</div><div class="lbl">Em pauta</div><h3>O direito de recomeçar</h3></div></a>
+        <a class="toc-card c-teal" href="#artigo-2"><div class="bar"></div><div class="in"><div class="num">02</div><div class="lbl">Vozes</div><h3>Escutar antes de tudo</h3></div></a>
+        <a class="toc-card c-sun" href="#realizacoes"><div class="bar"></div><div class="in"><div class="num">03</div><div class="lbl">Realizações</div><h3>2026 em números</h3></div></a>
         <a class="toc-card c-navy" href="#artigo-4"><div class="bar"></div><div class="in"><div class="num">04</div><div class="lbl">Gente BZN</div><h3>A cozinha que virou sala de aula</h3></div></a>
       </div>
     </div>
   </section>
 
   <!-- ================= ARTIGO 1 — EM PAUTA ================= -->
-  <article class="article a-coral" id="artigo-1">
+  <article class="article a-blue" id="artigo-1">
     <span class="folio">01</span>
     <div class="wrap">
       <div class="article-head">
-        <span class="tag t-coral">Em pauta · Educação</span>
+        <span class="tag t-blue">Em pauta · Educação</span>
         <h2>O direito de recomeçar</h2>
         <p class="dek">Quando a educação chega ao território, ela deixa de ser uma promessa distante e passa a ser uma escolha possível — inclusive para quem já havia desistido dela.</p>
-        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BRASA</b> · 8 min de leitura</span></div>
+        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BZN</b> · 8 min de leitura</span></div>
       </div>
       <figure class="photo">
         <div class="frame">
           <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><linearGradient id="eduBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A4C"/><stop offset="1" stop-color="#EA5230"/></linearGradient></defs>
+            <defs><linearGradient id="eduBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E86B0"/><stop offset="1" stop-color="#14418C"/></linearGradient></defs>
             <rect width="800" height="450" fill="url(#eduBg)"/>
-            <circle cx="670" cy="120" r="150" fill="#FFC24A" opacity=".5"/>
-            <circle cx="670" cy="120" r="70" fill="#FFF3D6"/>
+            <circle cx="670" cy="120" r="150" fill="#FFE7A6" opacity=".45"/>
+            <circle cx="670" cy="120" r="66" fill="#FFE7A6"/>
             <circle cx="230" cy="90" r="9" fill="#FFF3D6" opacity=".9"/>
-            <circle cx="560" cy="300" r="7" fill="#FFF3D6" opacity=".7"/>
-            <circle cx="150" cy="240" r="6" fill="#04263F" opacity=".5"/>
-            <path d="M120,300 Q400,332 680,300 L680,326 Q400,358 120,326 Z" fill="#04263F" opacity=".65"/>
-            <path d="M400,300 C330,268 250,266 196,286 L196,196 C250,176 330,178 400,210 Z" fill="#FFF3D6"/>
-            <path d="M400,300 C470,268 550,266 604,286 L604,196 C550,176 470,178 400,210 Z" fill="#FDE9CF"/>
-            <path d="M400,210 L400,300" stroke="#04263F" stroke-width="4"/>
-            <path d="M360,222 C320,214 282,216 240,230" stroke="#EA5230" stroke-width="3.5" fill="none" opacity=".75"/>
-            <path d="M362,246 C322,238 284,240 244,254" stroke="#EA5230" stroke-width="3.5" fill="none" opacity=".75"/>
-            <path d="M440,222 C480,214 518,216 560,230" stroke="#FF8A4C" stroke-width="3.5" fill="none" opacity=".75"/>
-            <path d="M438,246 C478,238 516,240 556,254" stroke="#FF8A4C" stroke-width="3.5" fill="none" opacity=".75"/>
+            <circle cx="560" cy="300" r="7" fill="#8FD0CB" opacity=".8"/>
+            <circle cx="150" cy="240" r="6" fill="#FFE7A6" opacity=".7"/>
+            <path d="M120,300 Q400,332 680,300 L680,326 Q400,358 120,326 Z" fill="#06283F" opacity=".55"/>
+            <path d="M400,300 C330,268 250,266 196,286 L196,196 C250,176 330,178 400,210 Z" fill="#FBF6EC"/>
+            <path d="M400,300 C470,268 550,266 604,286 L604,196 C550,176 470,178 400,210 Z" fill="#EAF0F0"/>
+            <path d="M400,210 L400,300" stroke="#06283F" stroke-width="4"/>
+            <path d="M360,222 C320,214 282,216 240,230" stroke="#2F6BE0" stroke-width="3.5" fill="none" opacity=".8"/>
+            <path d="M362,246 C322,238 284,240 244,254" stroke="#2F6BE0" stroke-width="3.5" fill="none" opacity=".8"/>
+            <path d="M440,222 C480,214 518,216 560,230" stroke="#0E9B94" stroke-width="3.5" fill="none" opacity=".8"/>
+            <path d="M438,246 C478,238 516,240 556,254" stroke="#0E9B94" stroke-width="3.5" fill="none" opacity=".8"/>
           </svg>
         </div>
         <figcaption>Ilustração de exemplo — substitua pela foto real do artigo. Descreva quem aparece na legenda.</figcaption>
@@ -344,11 +347,11 @@
   </article>
 
   <!-- ================= ARTIGO 2 — VOZES ================= -->
-  <article class="article a-amber" id="artigo-2">
+  <article class="article a-teal" id="artigo-2">
     <span class="folio">02</span>
     <div class="wrap">
       <div class="article-head">
-        <span class="tag t-amber">Vozes · Artigo assinado</span>
+        <span class="tag t-teal">Vozes · Artigo assinado</span>
         <h2>Escutar antes de tudo</h2>
         <p class="dek">Saúde mental na periferia começa por uma atitude simples e escassa: escutar de verdade, sem pressa e sem julgamento.</p>
         <div class="article-meta"><span class="avatar"></span><span>por <b>Nome da Especialista</b>, psicóloga · convidada desta edição</span></div>
@@ -356,16 +359,16 @@
       <figure class="photo">
         <div class="frame">
           <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><linearGradient id="vozBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD36A"/><stop offset="1" stop-color="#FF8A4C"/></linearGradient></defs>
+            <defs><linearGradient id="vozBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3AB0A6"/><stop offset="1" stop-color="#0B7D77"/></linearGradient></defs>
             <rect width="800" height="450" fill="url(#vozBg)"/>
-            <circle cx="120" cy="104" r="66" fill="#FFF0C9"/>
-            <path d="M424,150 C424,134 411,124 396,124 C387,124 378,129 374,137 C370,129 361,124 352,124 C337,124 324,134 324,150 C324,176 374,202 374,202 C374,202 424,176 424,150 Z" fill="#EA5230"/>
-            <path d="M0,398 Q400,352 800,398 L800,450 L0,450 Z" fill="#123A5A"/>
-            <path d="M0,420 Q400,384 800,420 L800,450 L0,450 Z" fill="#04263F"/>
-            <circle cx="300" cy="234" r="36" fill="#04263F"/>
-            <path d="M200,432 C210,312 248,278 300,278 C352,278 390,312 400,432 Z" fill="#04263F"/>
-            <circle cx="502" cy="234" r="36" fill="#EA5230"/>
-            <path d="M402,432 C412,312 450,278 502,278 C554,278 592,312 602,432 Z" fill="#EA5230"/>
+            <circle cx="120" cy="104" r="64" fill="#DFF3EF"/>
+            <path d="M424,150 C424,134 411,124 396,124 C387,124 378,129 374,137 C370,129 361,124 352,124 C337,124 324,134 324,150 C324,176 374,202 374,202 C374,202 424,176 424,150 Z" fill="#F7BE3F"/>
+            <path d="M0,398 Q400,352 800,398 L800,450 L0,450 Z" fill="#123E63"/>
+            <path d="M0,420 Q400,384 800,420 L800,450 L0,450 Z" fill="#06283F"/>
+            <circle cx="300" cy="234" r="36" fill="#06283F"/>
+            <path d="M200,432 C210,312 248,278 300,278 C352,278 390,312 400,432 Z" fill="#06283F"/>
+            <circle cx="502" cy="234" r="36" fill="#F7BE3F"/>
+            <path d="M402,432 C412,312 450,278 502,278 C554,278 592,312 602,432 Z" fill="#F7BE3F"/>
           </svg>
         </div>
         <figcaption>Ilustração de exemplo — substitua por um retrato da autora ou imagem que dialogue com o tema.</figcaption>
@@ -380,17 +383,17 @@
   </article>
 
   <!-- ================= ARTIGO 3 — REALIZAÇÕES ================= -->
-  <article class="article a-blue" id="realizacoes">
+  <article class="article a-sun" id="realizacoes">
     <span class="folio">03</span>
     <div class="wrap">
       <div class="article-head">
-        <span class="tag t-blue">Nossas realizações</span>
+        <span class="tag t-sun">Nossas realizações</span>
         <h2>2026 em números</h2>
         <p class="dek">Um retrato honesto do que o Instituto realizou neste ano — com dados, contexto e as histórias por trás de cada número.</p>
-        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BRASA</b> · 5 min de leitura</span></div>
+        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BZN</b> · 5 min de leitura</span></div>
       </div>
       <div class="stats">
-        <span class="tag t-amber">O ano em números</span>
+        <span class="tag t-sun">O ano em números</span>
         <div class="stats-grid">
           <div class="stat"><div class="n">1.240</div><div class="t">pessoas atendidas</div></div>
           <div class="stat"><div class="n">18</div><div class="t">projetos ativos no território</div></div>
@@ -414,17 +417,17 @@
         <span class="tag t-navy">Gente BZN · Perfil</span>
         <h2>A cozinha que virou sala de aula</h2>
         <p class="dek">Dona Marlene entrou para aprender a ler receitas. Saiu ensinando o bairro inteiro a não desperdiçar nada.</p>
-        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BRASA</b> · 6 min de leitura</span></div>
+        <div class="article-meta"><span class="avatar"></span><span>por <b>Redação BZN</b> · 6 min de leitura</span></div>
       </div>
       <figure class="photo">
         <div class="frame">
           <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><radialGradient id="perfBg" cx="42%" cy="38%" r="80%"><stop offset="0" stop-color="#FFD36A"/><stop offset="1" stop-color="#FF7A4D"/></radialGradient></defs>
+            <defs><radialGradient id="perfBg" cx="42%" cy="38%" r="82%"><stop offset="0" stop-color="#FFEFC4"/><stop offset="1" stop-color="#9AD7D1"/></radialGradient></defs>
             <rect width="800" height="450" fill="url(#perfBg)"/>
-            <circle cx="400" cy="200" r="160" fill="#FFF0C9" opacity=".6"/>
-            <path d="M226,450 C244,300 316,252 400,252 C484,252 556,300 574,450 Z" fill="#04263F"/>
-            <circle cx="400" cy="196" r="76" fill="#04263F"/>
-            <path d="M400,348 C378,328 386,315 400,323 C414,315 422,328 400,348 Z" fill="#FFB020"/>
+            <circle cx="400" cy="200" r="160" fill="#FFE7A6" opacity=".55"/>
+            <path d="M226,450 C244,300 316,252 400,252 C484,252 556,300 574,450 Z" fill="#06283F"/>
+            <circle cx="400" cy="196" r="76" fill="#06283F"/>
+            <path d="M400,348 C378,328 386,315 400,323 C414,315 422,328 400,348 Z" fill="#F7BE3F"/>
           </svg>
         </div>
         <figcaption>Ilustração de exemplo — substitua por um retrato próximo, olhando para a câmera. Rostos reais transmitem verdade.</figcaption>
@@ -443,7 +446,7 @@
     <div class="wrap measure">
       <span class="tag">Faça parte</span>
       <h2>Histórias assim continuam com você</h2>
-      <p>Doando, sendo voluntário ou compartilhando esta revista, você ajuda o Instituto Brasa Zona Norte a chegar mais longe.</p>
+      <p>Doando, sendo voluntário ou compartilhando esta revista, você ajuda o Instituto BZN a chegar mais longe.</p>
       <a class="btn" href="#">Quero doar</a>
       <a class="btn ghost" href="#">Ser voluntário</a>
     </div>
@@ -457,10 +460,10 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="logo">
-          <svg viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27.6C16 27.6 2.2 19.1 2.2 9.4C2.2 4.8 5.9 1.6 9.8 1.6C12.4 1.6 14.7 3 16 5.1C17.3 3 19.6 1.6 22.2 1.6C26.1 1.6 29.8 4.8 29.8 9.4C29.8 19.1 16 27.6 16 27.6Z" fill="#FFB020"/></svg>
-          BRASA
+          <svg viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27.6C16 27.6 2.2 19.1 2.2 9.4C2.2 4.8 5.9 1.6 9.8 1.6C12.4 1.6 14.7 3 16 5.1C17.3 3 19.6 1.6 22.2 1.6C26.1 1.6 29.8 4.8 29.8 9.4C29.8 19.1 16 27.6 16 27.6Z" fill="#2F6BE0"/></svg>
+          Revista Digital do Instituto BZN
         </div>
-        <p>A revista do Instituto Brasa Zona Norte. Histórias, artigos e realizações do território.</p>
+        <p>Artigos, histórias e realizações do Instituto BZN, na zona norte.</p>
       </div>
       <div class="foot-links">
         <div class="foot-col"><b>Revista</b><a href="#sumario">Nesta edição</a><a href="#artigo-1">Artigos</a><a href="#realizacoes">Realizações</a></div>
@@ -468,7 +471,7 @@
         <div class="foot-col"><b>Contato</b><a href="#">institutobzn@gmail.com</a><a href="#">@institutobzn</a></div>
       </div>
     </div>
-    <div class="foot-bottom">Revista BRASA · Nº 01 · Julho 2026 — Uma publicação do Instituto Brasa Zona Norte. Conteúdo desta edição é um exemplo para diagramação.</div>
+    <div class="foot-bottom">Revista Digital do Instituto BZN · 6ª edição · Julho 2026. Conteúdo desta edição é um exemplo para diagramação.</div>
   </div>
 </footer>
 

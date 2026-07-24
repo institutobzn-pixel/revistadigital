@@ -1,4 +1,4 @@
-# Revista BZN — Revista digital do Instituto Brasa Zona Norte
+# Revista Digital do Instituto BZN
 
 Layout de revista digital, responsivo e acolhedor, pensado para transmitir **credibilidade** e reunir **artigos de interesse geral** e as **realizações** do Instituto.
 
@@ -51,10 +51,13 @@ Baseada na marca do Instituto:
 
 | Cor | Uso | Código |
 |-----|-----|--------|
-| Azul naval | Cor principal (títulos, masthead, faixas) | `#002B5C` |
-| Azul vibrante | Destaque (etiquetas, links) | `#2F6BE0` |
-| Areia | Fundo quente / faixas suaves | `#E7DDCD` |
-| Creme | Fundo da página | `#FBF8F2` |
+| Azul naval | Âncora (títulos, masthead, rodapé) | `#06283F` |
+| Azul da marca | Protagonista (etiquetas, links, acentos) | `#2F6BE0` |
+| Teal (verde-azulado) | Frescor / acento de seção | `#0E9B94` |
+| Dourado suave | Toque quente pontual (nunca dominante) | `#F7BE3F` |
+| Creme | Fundo da página | `#FBF8F1` |
+
+Cada seção/artigo tem uma cor de acento (azul, teal, dourado, naval), aplicada na etiqueta, no número gigante (folio), na capitular e na citação — é o que dá variedade sem perder a unidade.
 
 As cores ficam todas no topo do `<style>`, em `:root` — mudar num lugar só atualiza a revista inteira.
 
