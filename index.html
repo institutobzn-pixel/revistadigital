@@ -104,8 +104,10 @@
     display:flex;align-items:flex-end;
   }
   .cover-figure .mark{position:absolute;top:26px;left:26px;width:46px;opacity:.9}
-  .cover-figure figcaption{padding:20px 22px;color:rgba(255,255,255,.9);font-size:.8rem;letter-spacing:.02em}
+  .cover-figure figcaption{position:relative;z-index:2;padding:20px 22px;color:rgba(255,255,255,.92);font-size:.8rem;letter-spacing:.02em}
+  .cover-scrim{position:absolute;inset:auto 0 0 0;height:45%;z-index:1;background:linear-gradient(to top, rgba(0,27,61,.55), transparent)}
   .ph-note{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,.55);font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+  .illus{position:absolute;inset:0;width:100%;height:100%;display:block}
   @media(max-width:820px){
     .cover-grid{grid-template-columns:1fr;gap:34px}
     .cover-figure{aspect-ratio:16/11;order:-1}
@@ -230,9 +232,30 @@
         <p class="byline">Reportagem de capa · por <b>Redação BZN</b></p>
       </div>
       <figure class="cover-figure">
-        <svg class="mark" viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27.6C16 27.6 2.2 19.1 2.2 9.4C2.2 4.8 5.9 1.6 9.8 1.6C12.4 1.6 14.7 3 16 5.1C17.3 3 19.6 1.6 22.2 1.6C26.1 1.6 29.8 4.8 29.8 9.4C29.8 19.1 16 27.6 16 27.6Z" fill="rgba(255,255,255,.9)"/></svg>
-        <span class="ph-note">Foto de capa</span>
-        <figcaption>Substitua por uma foto real do Instituto — de preferência com pessoas, luz natural e olhar acolhedor.</figcaption>
+        <svg class="illus" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="skyCover" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FCE9CC"/><stop offset="1" stop-color="#F3C58F"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#skyCover)"/>
+          <circle cx="288" cy="132" r="118" fill="#F8D8A6" opacity=".55"/>
+          <circle cx="288" cy="132" r="66" fill="#F4B15B"/>
+          <path d="M0,352 Q120,300 250,336 T400,314 L400,500 L0,500 Z" fill="#5A8BEE" opacity=".55"/>
+          <path d="M0,398 Q150,348 300,388 T400,378 L400,500 L0,500 Z" fill="#2F6BE0"/>
+          <!-- figuras (comunidade) -->
+          <g>
+            <circle cx="150" cy="346" r="16" fill="#123E7A"/>
+            <path d="M112,452 C118,392 128,372 150,372 C172,372 182,392 188,452 Z" fill="#123E7A"/>
+            <circle cx="252" cy="350" r="15" fill="#2F6BE0"/>
+            <path d="M216,452 C222,396 232,378 252,378 C272,378 282,396 288,452 Z" fill="#2F6BE0"/>
+            <circle cx="202" cy="334" r="19" fill="#002B5C"/>
+            <path d="M160,460 C167,392 178,368 202,368 C226,368 237,392 244,460 Z" fill="#002B5C"/>
+          </g>
+          <path d="M0,442 Q200,404 400,446 L400,500 L0,500 Z" fill="#002B5C"/>
+        </svg>
+        <div class="cover-scrim"></div>
+        <figcaption>Ilustração de exemplo — substitua por uma foto real do Instituto (pessoas, luz natural, olhar acolhedor).</figcaption>
       </figure>
     </div>
   </section>
@@ -290,8 +313,27 @@
       </div>
 
       <figure class="photo">
-        <div class="frame f-blue"><span class="ph-note">Imagem do artigo</span></div>
-        <figcaption>Legenda da foto: descreva quem aparece e o contexto. Fotos reais aumentam a confiança do leitor.</figcaption>
+        <div class="frame f-blue">
+          <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="eduBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B3E7C"/><stop offset="1" stop-color="#002B5C"/></linearGradient></defs>
+            <rect width="800" height="450" fill="url(#eduBg)"/>
+            <circle cx="672" cy="116" r="96" fill="#2F6BE0" opacity=".22"/>
+            <circle cx="672" cy="116" r="52" fill="#F4B15B"/>
+            <circle cx="248" cy="86" r="7" fill="#F4B15B" opacity=".85"/>
+            <circle cx="560" cy="300" r="6" fill="#5A8BEE"/>
+            <circle cx="176" cy="250" r="5" fill="#F1E9DB" opacity=".7"/>
+            <circle cx="618" cy="384" r="8" fill="#5A8BEE" opacity=".6"/>
+            <path d="M120,300 Q400,332 680,300 L680,322 Q400,356 120,322 Z" fill="#001B3D" opacity=".55"/>
+            <path d="M400,300 C330,268 250,266 196,286 L196,196 C250,176 330,178 400,210 Z" fill="#E9DFCC"/>
+            <path d="M400,300 C470,268 550,266 604,286 L604,196 C550,176 470,178 400,210 Z" fill="#FBF6EC"/>
+            <path d="M400,210 L400,300" stroke="#002B5C" stroke-width="3"/>
+            <path d="M360,220 C320,212 280,214 236,228" stroke="#C3CBDA" stroke-width="3" fill="none" opacity=".8"/>
+            <path d="M362,244 C322,236 282,238 240,252" stroke="#C3CBDA" stroke-width="3" fill="none" opacity=".8"/>
+            <path d="M440,220 C480,212 520,214 564,228" stroke="#D7CDB6" stroke-width="3" fill="none" opacity=".8"/>
+            <path d="M438,244 C478,236 518,238 560,252" stroke="#D7CDB6" stroke-width="3" fill="none" opacity=".8"/>
+          </svg>
+        </div>
+        <figcaption>Ilustração de exemplo — substitua pela foto real do artigo. Descreva quem aparece na legenda; isso aumenta a confiança do leitor.</figcaption>
       </figure>
 
       <div class="body">
@@ -315,8 +357,21 @@
       </div>
 
       <figure class="photo">
-        <div class="frame f-sand"><span class="ph-note">Imagem do artigo</span></div>
-        <figcaption>Legenda da foto: um retrato da autora ou uma imagem que dialogue com o tema.</figcaption>
+        <div class="frame f-sand">
+          <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="vozBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCEAD0"/><stop offset="1" stop-color="#F1C48D"/></linearGradient></defs>
+            <rect width="800" height="450" fill="url(#vozBg)"/>
+            <circle cx="120" cy="110" r="60" fill="#F7CE93"/>
+            <path d="M382,150 C382,138 372,130 361,130 C354,130 347,134 344,140 C341,134 334,130 327,130 C316,130 306,138 306,150 C306,170 344,190 344,190 C344,190 382,170 382,150 Z" fill="#2F6BE0"/>
+            <path d="M0,398 Q400,352 800,398 L800,450 L0,450 Z" fill="#123E7A"/>
+            <path d="M0,420 Q400,384 800,420 L800,450 L0,450 Z" fill="#002B5C"/>
+            <circle cx="300" cy="232" r="34" fill="#002B5C"/>
+            <path d="M204,430 C214,314 250,282 300,282 C350,282 386,314 396,430 Z" fill="#002B5C"/>
+            <circle cx="500" cy="232" r="34" fill="#2F6BE0"/>
+            <path d="M404,430 C414,314 450,282 500,282 C550,282 586,314 596,430 Z" fill="#2F6BE0"/>
+          </svg>
+        </div>
+        <figcaption>Ilustração de exemplo — substitua por um retrato da autora ou uma imagem que dialogue com o tema.</figcaption>
       </figure>
 
       <div class="body">
@@ -368,8 +423,17 @@
       </div>
 
       <figure class="photo">
-        <div class="frame f-navy"><span class="ph-note">Retrato</span></div>
-        <figcaption>Legenda da foto: um retrato próximo, olhando para a câmera, transmite humanidade e verdade.</figcaption>
+        <div class="frame f-navy">
+          <svg class="illus" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="perfBg" cx="42%" cy="40%" r="75%"><stop offset="0" stop-color="#FBE4C4"/><stop offset="1" stop-color="#EDBB80"/></radialGradient></defs>
+            <rect width="800" height="450" fill="url(#perfBg)"/>
+            <circle cx="400" cy="205" r="150" fill="#F5B863" opacity=".45"/>
+            <path d="M226,450 C244,300 316,252 400,252 C484,252 556,300 574,450 Z" fill="#002B5C"/>
+            <circle cx="400" cy="196" r="74" fill="#002B5C"/>
+            <path d="M400,346 C380,328 387,316 400,324 C413,316 420,328 400,346 Z" fill="#F4B15B"/>
+          </svg>
+        </div>
+        <figcaption>Ilustração de exemplo — substitua por um retrato próximo, olhando para a câmera. Rostos reais transmitem humanidade e verdade.</figcaption>
       </figure>
 
       <div class="body">
