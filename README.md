@@ -49,15 +49,17 @@ Prefira **fotos reais do Instituto**, com pessoas e luz natural — elas passam 
 
 Baseada na marca do Instituto:
 
+Paleta enxuta e harmônica — **azul naval + papel creme + um único acento terracota**. A contenção é proposital: elegância editorial vem do respiro e da tipografia, não do excesso de cor.
+
 | Cor | Uso | Código |
 |-----|-----|--------|
-| Azul naval | Âncora (títulos, masthead, rodapé) | `#06283F` |
-| Azul da marca | Protagonista (etiquetas, links, acentos) | `#2F6BE0` |
-| Teal (verde-azulado) | Frescor / acento de seção | `#0E9B94` |
-| Dourado suave | Toque quente pontual (nunca dominante) | `#F7BE3F` |
-| Creme | Fundo da página | `#FBF8F1` |
+| Azul naval | Âncora: texto, títulos, faixas escuras, rodapé | `#132C42` |
+| Terracota | O único acento — etiquetas, fios, capitular, botões (com parcimônia) | `#B26A4C` |
+| Creme (papel) | Fundo da página | `#F5EFE4` |
+| Creme escuro | Faixa suave (carta do editor) | `#EDE5D6` |
+| Cinza quente | Texto secundário | `#736C5E` |
 
-Cada seção/artigo tem uma cor de acento (azul, teal, dourado, naval), aplicada na etiqueta, no número gigante (folio), na capitular e na citação — é o que dá variedade sem perder a unidade.
+Regra: nenhum outro tom entra. A variação entre seções vem do **layout e das fotos**, não de cores diferentes.
 
 As cores ficam todas no topo do `<style>`, em `:root` — mudar num lugar só atualiza a revista inteira.
 
