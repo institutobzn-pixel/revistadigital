@@ -1,78 +1,36 @@
 # Revista Digital do Instituto BZN
 
-Layout de revista digital, responsivo e acolhedor, pensado para transmitir **credibilidade** e reunir **artigos de interesse geral** e as **realizações** do Instituto.
+Layout de revista digital, responsivo e acolhedor, pensado para transmitir **credibilidade** e reunir entrevistas, artigos de interesse geral e as realizações do Instituto Brasa Zona Norte.
 
-- **Formato:** página única (o leitor rola de cima a baixo). Ótimo para compartilhar por link e ler no celular.
-- **Uma edição = 3 a 4 artigos** + carta do editor, sumário e chamada para ação.
-- **Sem dependências pesadas:** é um único arquivo `index.html`. Abra no navegador e pronto.
+O `index.html` é a **Edição Especial de 1 Ano** (a 5ª edição) inteira remontada no layout editorial, com o conteúdo e as fotos reais do Instituto — serve como modelo para as próximas edições.
 
-## Como visualizar
+- **Formato:** página única (rola de cima a baixo). Ótimo para compartilhar por link e ler no celular.
+- **Autocontido:** um único arquivo `index.html` (fotos embutidas). Abra no navegador e pronto.
 
-Abra o arquivo `index.html` no navegador (duplo clique já funciona).
+## Seções desta edição
+1. **Capa** — foto real da equipe em duotom (tons da marca) + manchete.
+2. **Carta do editor** — abertura curta e humana.
+3. **Sumário** — lista tipográfica com todas as seções e páginas.
+4. **Destaques do ano** — o que foi construído no primeiro ano.
+5. **Especial · Aniversário** — a reportagem do evento de 1 ano.
+6. **Entrevistas** — Adriana Paz (diretora), Drª Lúcia Del Rio (psicóloga) e Jussély Acioly (empresária).
+7. **Atividades que iniciaram em abril** — os novos cursos e oficinas.
+8. **Artigo** — "IA para pessoas comuns", do Dr. Tiago Cavalcanti Tabajara.
+9. **Agenda** — cursos e palestras do mês.
+10. **Salas de atendimento** — galeria da estrutura.
+11. **Contato / Como ajudar** e rodapé.
 
-## Estrutura de uma edição
+## Design
+Paleta enxuta e harmônica: **azul naval `#132C42` + papel creme `#F5EFE4` + um único acento terracota `#B26A4C`**. Títulos em Fraunces (serifada editorial), texto em Inter. As cores ficam no `:root` do `<style>`.
 
-1. **Masthead** — cabeçalho fixo com a marca e o menu.
-2. **Capa** — manchete da edição (o artigo mais forte) + foto de capa.
-3. **Carta do editor** — texto curto e humano que abre a edição.
-4. **Nesta edição (sumário)** — cartões que levam a cada artigo.
-5. **Artigos (3 a 4)** — cada um com etiqueta de seção, título, autor, foto e texto:
-   - `Em pauta` — reportagem de interesse geral (a de capa)
-   - `Vozes` — artigo assinado por um convidado/especialista
-   - `Nossas realizações` — matéria com números e impacto
-   - `Gente BZN` — perfil de uma pessoa real *(opcional, o 4º artigo)*
-6. **Como ajudar** — doação / voluntariado.
-7. **Rodapé** — marca, links e contato.
+Tratamentos editoriais aplicados: capa em **duotom** (unifica a cor da foto), **capitular**, **olho (pull quote)**, tratamento de **entrevista (pergunta/resposta)**, galerias e cartões de agenda.
 
-Publicar **3 ou 4 artigos** é só ter 3 ou 4 blocos `<article>` — o layout se adapta sozinho.
+## Como criar a próxima edição
+1. Duplique `index.html` (ex.: `edicao-07.html`).
+2. Troque textos nos blocos `<article>` / `<section>` e as fotos (tags `<img>`).
+3. Atualize capa, sumário e data.
 
-## Como trocar o conteúdo
+As fotos estão embutidas em base64 para o arquivo ser autocontido. Num fluxo de produção, o ideal é trocar por arquivos otimizados em `assets/` referenciados por caminho relativo.
 
-Tudo fica em `index.html`. Procure os comentários `<!-- ARTIGO X -->` e substitua:
-
-- **Título e chamada:** dentro de `<h2>` e do parágrafo `.dek`.
-- **Autor:** no bloco `.article-meta`.
-- **Texto:** dentro de `<div class="body">` (o primeiro parágrafo tem a classe `lead`, que gera a letra capitular).
-- **Citação de destaque:** parágrafo com a classe `pullquote`.
-- **Números (Realizações):** bloco `.stats-grid`.
-
-### Fotos
-As imagens estão como **espaços reservados** (blocos coloridos com a etiqueta "Imagem"). Para usar fotos reais, substitua cada `<div class="frame ...">` por uma tag de imagem, por exemplo:
-
-```html
-<img src="assets/foto-capa.jpg" alt="Descreva a foto para acessibilidade">
-```
-
-Prefira **fotos reais do Instituto**, com pessoas e luz natural — elas passam mais autoridade do que qualquer banco de imagens.
-
-## Identidade visual
-
-Baseada na marca do Instituto:
-
-Paleta enxuta e harmônica — **azul naval + papel creme + um único acento terracota**. A contenção é proposital: elegância editorial vem do respiro e da tipografia, não do excesso de cor.
-
-| Cor | Uso | Código |
-|-----|-----|--------|
-| Azul naval | Âncora: texto, títulos, faixas escuras, rodapé | `#132C42` |
-| Terracota | O único acento — etiquetas, fios, capitular, botões (com parcimônia) | `#B26A4C` |
-| Creme (papel) | Fundo da página | `#F5EFE4` |
-| Creme escuro | Faixa suave (carta do editor) | `#EDE5D6` |
-| Cinza quente | Texto secundário | `#736C5E` |
-
-Regra: nenhum outro tom entra. A variação entre seções vem do **layout e das fotos**, não de cores diferentes.
-
-As cores ficam todas no topo do `<style>`, em `:root` — mudar num lugar só atualiza a revista inteira.
-
-**Regra de ouro:** o azul naval aparece em detalhes; o "palco" da leitura é claro e neutro. Isso é o que faz parecer revista, e não folheto.
-
-### Tipografia
-- **Títulos:** Fraunces (serifada, editorial e acolhedora).
-- **Texto:** Inter (sem serifa, ótima leitura em tela).
-
-As fontes são carregadas do Google Fonts. Em ambientes sem internet, o layout cai automaticamente para Georgia + fonte do sistema, sem quebrar.
-
-### Logo
-O cabeçalho usa o **símbolo do coração** da marca desenhado em SVG, como aproximação. Para usar o **logo oficial**, coloque o arquivo em `assets/` (ex.: `assets/logo.svg`) e troque o bloco `<a class="brand">` no masthead e no rodapé por uma tag de imagem.
-
-## Próximas edições
-Duplique o `index.html` (ex.: `edicao-02.html`), troque o conteúdo e atualize a data na capa. A estrutura já está pronta para repetir.
+## Regenerar a partir do PDF
+O script que extrai fotos/textos de um PDF e monta a página está no diretório de trabalho da sessão (PyMuPDF + Pillow). Peça ao editor da revista se precisar reprocessar uma nova edição a partir de um PDF.
